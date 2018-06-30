@@ -1,35 +1,33 @@
 package org.prezydium;
 
-import com.intellij.openapi.fileTypes.FileType;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.ui.Messages;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProjectPropertiesDisplay {
 
-    private  String projectPath;
-
-
-    public void displayProperties(Project project){
-
-        projectPath = project.getBasePath();
-
-        System.out.println(project.getPresentableUrl());
-        System.out.println(project.getProjectFilePath());
-        System.out.println(project.getBasePath()); //
-        System.out.println(project.getLocationHash());
-        VirtualFile virtualFile = project.getProjectFile();
-        System.out.println(virtualFile.getBOM());
-        VirtualFile virtualFile1 = (project.getWorkspaceFile());
-        System.out.println(virtualFile1.getExtension());
-        System.out.println(virtualFile1.getTimeStamp());
-        try {
-            virtualFile1.rename(this, "test1");
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void displayProperties(Project project) {
+        final String projectPath = project.getBasePath();
+        final String projectName = project.getName();
+        final String sdkName = ProjectRootManager.getInstance(project).getProjectSdkName();
+        List<String> listOfModuleNamesWithFilePaths = new ArrayList<>();
+        final Module[] modules = ModuleManager.getInstance(project).getSortedModules();
+        for (Module module : modules) {
+            listOfModuleNamesWithFilePaths.add(module.getName()
+                    .concat(" ")
+                    .concat(module.getModuleFilePath()));
         }
-
+        Messages.showMessageDialog(new StringBuilder()
+                .append("Project name: ".concat(projectName + "\n"))
+                .append("Project path: ".concat(projectPath + "\n"))
+                .append("Used SDK: ".concat(sdkName + "\n"))
+                .append("Contains modules: ")
+                .append(listOfModuleNamesWithFilePaths)
+                .toString(), "la", null);
     }
-
 }
