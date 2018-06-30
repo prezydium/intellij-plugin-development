@@ -25,17 +25,21 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
-    </extensions>
+            <toolWindow id="org.prezydium.PrezydiumWindow" icon="/av.png" anchor="right" factoryClass="org.prezydium.toolwindow.PrezydiumToolWindow"/>
+          </extensions>
 
     <actions>
         <group id="PrezydiumGroup" text="Prezydium Actions" popup="true">
             <add-to-group group-id="MainMenu" anchor="last"/>
         </group>
         <!-- Add your actions here -->
-        <action id="displayProjectProperties" class="org.prezydium.DisplayProjectPropertiesAction"
+        <action id="org.prezydium.displayProjectProperties" class="org.prezydium.projectproperties.DisplayProjectPropertiesAction"
                 text="Display project properties" description="Displays project properties">
-            <add-to-group group-id="PrezydiumGroup" anchor="last"/>
+            <add-to-group group-id="PrezydiumGroup" anchor="first"/>
+        </action>
+        <action id="org.prezydium.position" class="org.prezydium.clickanalyzer.ClickAnalyzerAction"
+                text="Click analise" description="Analyses properties of clicked item">
+            <add-to-group group-id="NewGroup1" anchor="first"/>
         </action>
     </actions>
 

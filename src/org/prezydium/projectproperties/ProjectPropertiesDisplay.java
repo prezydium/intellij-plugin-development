@@ -1,4 +1,4 @@
-package org.prezydium;
+package org.prezydium.projectproperties;
 
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
@@ -28,6 +28,6 @@ public class ProjectPropertiesDisplay {
                 .append("Used SDK: ".concat(sdkName + "\n"))
                 .append("Contains modules: ")
                 .append(listOfModuleNamesWithFilePaths)
-                .toString(), "la", null);
+                .toString(), "Project Properties", null);
     }
 }
