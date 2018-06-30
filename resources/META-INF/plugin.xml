@@ -33,7 +33,7 @@
             <add-to-group group-id="MainMenu" anchor="last"/>
         </group>
         <!-- Add your actions here -->
-        <action id="displayProjectProperties" class="org.prezydium.DisplayProjectProperties"
+        <action id="displayProjectProperties" class="org.prezydium.DisplayProjectPropertiesAction"
                 text="Display project properties" description="Displays project properties">
             <add-to-group group-id="PrezydiumGroup" anchor="last"/>
         </action>
