@@ -25,15 +25,20 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-            <toolWindow id="org.prezydium.PrezydiumWindow" icon="/av.png" anchor="right" factoryClass="org.prezydium.toolwindow.PrezydiumToolWindow"/>
-          </extensions>
+        <!--
+        Adds tool window to the right of tool windows panel
+        -->
+        <toolWindow id="PrezydiumWindow" icon="/av.png" anchor="right"
+                    factoryClass="org.prezydium.toolwindow.PrezydiumToolWindow"/>
+    </extensions>
 
     <actions>
         <group id="PrezydiumGroup" text="Prezydium Actions" popup="true">
             <add-to-group group-id="MainMenu" anchor="last"/>
         </group>
         <!-- Add your actions here -->
-        <action id="org.prezydium.displayProjectProperties" class="org.prezydium.projectproperties.DisplayProjectPropertiesAction"
+        <action id="org.prezydium.displayProjectProperties"
+                class="org.prezydium.projectproperties.DisplayProjectPropertiesAction"
                 text="Display project properties" description="Displays project properties">
             <add-to-group group-id="PrezydiumGroup" anchor="first"/>
         </action>
