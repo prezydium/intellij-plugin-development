@@ -43,7 +43,7 @@
             <add-to-group group-id="PrezydiumGroup" anchor="first"/>
         </action>
         <action id="org.prezydium.position" class="org.prezydium.clickanalyzer.ClickAnalyzerAction"
-                text="Click analise" description="Analyses properties of clicked item">
+                text="Click analyse" description="Analyses properties of clicked item">
             <add-to-group group-id="NewGroup1" anchor="first"/>
         </action>
     </actions>

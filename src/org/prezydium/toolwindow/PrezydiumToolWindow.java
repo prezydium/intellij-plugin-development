@@ -15,10 +15,11 @@ public class PrezydiumToolWindow implements ToolWindowFactory {
     private JPanel panel1;
     private JButton goodButton;
     private JButton notWellButton;
+    private JTextArea textArea1;
 
     public PrezydiumToolWindow() {
         goodButton.addActionListener(e -> Messages.showMessageDialog("Nice to hear that!", "Happy Window", new ImageIcon("/av.png")));
-        notWellButton.addActionListener(e -> Messages.showMessageDialog("If i could i would hug you", "Sad Window", new ImageIcon("/av.png")));
+        notWellButton.addActionListener(e -> Messages.showMessageDialog("If I could I would hug you", "Sad Window", new ImageIcon("/av.png")));
     }
 
     @Override
